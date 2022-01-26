@@ -11,7 +11,7 @@ Gem::Specification.new do |s|
   s.homepage    = "https://github.com/rspec/rspec-rails"
   s.summary     = "RSpec for Rails"
   s.description = "rspec-rails is a testing framework for Rails 5+."
-  s.required_ruby_version = ">= 2.2.0"
+  s.required_ruby_version = ">= 2.5.0"
 
   s.metadata = {
     'bug_tracker_uri'   => 'https://github.com/rspec/rspec-rails/issues',
@@ -33,7 +33,7 @@ Gem::Specification.new do |s|
     s.cert_chain = [File.expand_path('~/.gem/rspec-gem-public_cert.pem')]
   end
 
-  version_string = ['>= 5.2']
+  version_string = ['>= 6.1']
 
   s.add_runtime_dependency 'actionpack',    version_string
   s.add_runtime_dependency 'activesupport', version_string
@@ -48,10 +48,10 @@ Gem::Specification.new do |s|
     if ENV['RSPEC_CI']
       s.add_runtime_dependency "rspec-#{name}", ENV.fetch('RSPEC_VERSION', '3.11.0.pre')
     elsif RSpec::Rails::Version::STRING =~ /pre/ # prerelease builds
-      expected_rspec_version = "3.11.0.pre"
+      expected_rspec_version = "3.12.0.pre"
       s.add_runtime_dependency "rspec-#{name}", "= #{expected_rspec_version}"
     else
-      expected_rspec_version = "3.10.0"
+      expected_rspec_version = "3.11.0"
       s.add_runtime_dependency "rspec-#{name}", "~> #{expected_rspec_version.split(".")[0..1].join(".")}"
     end
   end
